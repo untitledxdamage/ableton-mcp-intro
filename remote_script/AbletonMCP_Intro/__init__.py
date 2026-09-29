@@ -943,10 +943,28 @@ class AbletonMCP(ControlSurface):
             t.delete_clip(c)
         return {"removed": len(clips)}
 
-    def cmd_show_view(self, view="Arranger"):
-        """Switch Live's main view: 'Arranger' or 'Session'."""
-        Live.Application.get_application().view.show_view(view)
-        return {"shown": view}
+    def cmd_navigate_view(self, action="zoom", direction="left", view="Arranger", steps=1,
+                          modifier=False):
+        """Zoom or scroll a view like the arrow keys would: action 'zoom' or 'scroll',
+        direction up/down/left/right (in the Arranger, zoom left = zoom out in time)."""
+        dirs = {"up": 0, "down": 1, "left": 2, "right": 3}
+        app_view = Live.Application.get_application().view
+        fn = app_view.zoom_view if action == "zoom" else app_view.scroll_view
+        for _ in range(int(steps)):
+            fn(dirs[direction], view, bool(modifier))
+        return {"action": action, "direction": direction, "steps": steps}
+
+    def cmd_show_view(self, view="Arranger", hide=None):
+        """Show a view ('Arranger', 'Session', 'Browser', 'Detail', 'Detail/Clip',
+        'Detail/DeviceChain') and optionally hide others (list of the same names)."""
+        app_view = Live.Application.get_application().view
+        if view:
+            app_view.show_view(view)
+        for name in hide or []:
+            app_view.hide_view(name)
+        return {"shown": view, "hidden": list(hide or []),
+                "visible": [n for n in ("Arranger", "Session", "Browser", "Detail")
+                            if app_view.is_view_visible(n)]}
 
     # ------------------------------------------------------------------ reload
 

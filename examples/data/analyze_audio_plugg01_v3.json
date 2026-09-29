@@ -1,0 +1,82 @@
+{
+  "file": "Plugg 01 v3 - 140 BPM - A major.wav",
+  "format": "96000 Hz, PCM_24, 2 ch, 113.14 s",
+  "integrated_lufs": -9.78,
+  "peak_dbfs": -1.03,
+  "true_peak_dbtp": -1.02,
+  "rms_dbfs": -10.99,
+  "crest_db": 9.96,
+  "clipped_samples": 0,
+  "silent": false,
+  "band_balance_db": {
+    "sub 20-60": -7.75,
+    "bass 60-250": -1.4,
+    "low-mid 250-2k": -10.88,
+    "high-mid 2k-6k": -17.81,
+    "air 6k-20k": -20.19
+  },
+  "texture": {
+    "contrast_db": 15.6,
+    "crackle_ratio": 5.9,
+    "tonal_peak_hz": 2636.7,
+    "tonal_prominence": 10.8
+  },
+  "stereo_correlation": 0.928,
+  "low_end_correlation_150hz": 1.0,
+  "sections": [
+    {
+      "section": "Intro",
+      "from_s": 0.0,
+      "lufs": -15.26,
+      "peak_dbfs": -4.47
+    },
+    {
+      "section": "Hook",
+      "from_s": 13.7,
+      "lufs": -8.46,
+      "peak_dbfs": -1.03
+    },
+    {
+      "section": "Verse",
+      "from_s": 27.4,
+      "lufs": -9.06,
+      "peak_dbfs": -1.03
+    },
+    {
+      "section": "Hook 2",
+      "from_s": 41.1,
+      "lufs": -8.35,
+      "peak_dbfs": -1.03
+    },
+    {
+      "section": "Break",
+      "from_s": 54.9,
+      "lufs": -11.43,
+      "peak_dbfs": -1.06
+    },
+    {
+      "section": "Hook",
+      "from_s": 68.6,
+      "lufs": -8.61,
+      "peak_dbfs": -1.03
+    },
+    {
+      "section": "Hook 2",
+      "from_s": 82.3,
+      "lufs": -8.36,
+      "peak_dbfs": -1.03
+    },
+    {
+      "section": "Outro",
+      "from_s": 96.0,
+      "lufs": -13.85,
+      "peak_dbfs": -2.82
+    },
+    {
+      "section": "9",
+      "from_s": 109.7,
+      "lufs": -23.29,
+      "peak_dbfs": -9.71
+    }
+  ]
+}

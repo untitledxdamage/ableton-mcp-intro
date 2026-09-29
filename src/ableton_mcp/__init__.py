@@ -532,12 +532,23 @@ def clear_arrangement(track_index: int) -> dict:
 
 
 @mcp.tool()
-def show_view(view: Literal["Arranger", "Session"] = "Arranger") -> dict:
-    """Switch Live's main window between Arrangement and Session view."""
-    return live.send("show_view", view=view)
+def show_view(view: str | None = "Arranger", hide: list[str] | None = None) -> dict:
+    """Show a view of Live's window ('Arranger', 'Session', 'Browser', 'Detail',
+    'Detail/Clip', 'Detail/DeviceChain') and optionally hide others, e.g.
+    view='Arranger', hide=['Browser', 'Detail'] for a clean Arrangement."""
+    return live.send("show_view", view=view, hide=hide)
 
 
-# ----------------------------------------------------------------- meters
+@mcp.tool()
+def navigate_view(action: Literal["zoom", "scroll"] = "zoom",
+                  direction: Literal["up", "down", "left", "right"] = "left",
+                  view: str = "Arranger", steps: int = 1, modifier: bool = False) -> dict:
+    """Zoom or scroll a view like the arrow keys. In the Arranger, zoom 'left' zooms
+    out in time (3 steps fit a ~64-bar song on a wide window) and scroll 'left' goes
+    toward bar 1."""
+    return live.send("navigate_view", action=action, direction=direction, view=view,
+                     steps=steps, modifier=modifier)
+
 
 @mcp.tool()
 def measure_levels(seconds: float = 8.0) -> dict:

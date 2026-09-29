@@ -97,6 +97,7 @@ Generada desde el código (métodos `cmd_*` del Remote Script). Por el socket se
 | `load_audio_clip` | `track_index, slot_index, file_path` | igual |
 | `load_device` | `track_index, path=None, query=None, category=None, kind='track'` | igual |
 | `move_device` | `track_index, device_index, new_index, kind='track'` | igual |
+| `navigate_view` | `action='zoom', direction='left', view='Arranger', steps=1, modifier=False` | igual |
 | `ping` | — | igual |
 | `quantize_clip` | `track_index, slot_index, grid='1/16', amount=1.0` | igual |
 | `reload` | — | `reload_script` |
@@ -116,7 +117,7 @@ Generada desde el código (métodos `cmd_*` del Remote Script). Por el socket se
 | `set_tempo` | `bpm` | igual |
 | `set_time_signature` | `numerator, denominator` | igual |
 | `set_track` | `track_index, kind='track', name=None, volume=None, pan=None, mute=None, solo=None, arm=None, color_index=None, sends=None, monitoring=None` | igual |
-| `show_view` | `view='Arranger'` | igual |
+| `show_view` | `view='Arranger', hide=None` | igual |
 | `stop_track_clips` | `track_index` | igual |
 | `transport` | `action` | igual |
 

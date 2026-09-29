@@ -23,12 +23,21 @@ Le da a un agente manos y oídos dentro de Live:
 
 ## Qué hace bien (probado)
 
-- **Control fino en Intro.** 56 herramientas que cubren el trabajo diario en Live, sin Max for Live.
+- **Control fino en Intro.** 57 herramientas que cubren el trabajo diario en Live, sin Max for Live.
 - **Unidades reales en vez de valores crudos.** Pedir "150 Hz" o "-18 dB" cae exacto: el puente busca el valor usando la propia pantalla de Live.
 - **Render honesto.** La API de Live no exporta, así que el puente graba en tiempo real y recorta el desfase de latencia oculto que agrega Live. Los archivos empiezan en el primer tiempo (verificado en cada golpe). Todos los stems salen en una pasada, y su suma reproduce el master (correlación 0.97).
 - **Medición confiable.** La loudness coincide con referencias BS.1770 (±0.02 LU) y el análisis usa unos 90 MB de RAM.
 - **Seguro con una persona al lado.** No te quita el foco mientras usas la PC, se protege del atajo "S = solo" de Live, restaura solo y mute, y devuelve errores claros.
 - **Recarga en caliente.** Actualiza el script sin reiniciar Live.
+
+## Resultados
+
+Un beat completo hecho con el puente, con audio, gráficos y una sesión de ejemplo real: **[examples/](examples/README.md)** (en inglés).
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="examples/img/sidechain_dark.png">
+  <img alt="El nivel del pad baja en cada golpe del 808: sidechain real configurado por un agente" src="examples/img/sidechain_light.png" width="720">
+</picture>
 
 ## Qué no hace
 
@@ -75,11 +84,11 @@ Le da a un agente manos y oídos dentro de Live:
 
 **Para actualizar el script:** `install_remote_script.ps1 -Reload` aplica los cambios sin reiniciar Live. Cambiar el Control Surface **no** recarga el código.
 
-## Herramientas (56)
+## Herramientas (57)
 
 | Área | Herramientas |
 |---|---|
-| Sesión y transporte | `get_session_info` `set_tempo` `set_time_signature` `transport` `set_song_options` `show_view` |
+| Sesión y transporte | `get_session_info` `set_tempo` `set_time_signature` `transport` `set_song_options` `show_view` `navigate_view` |
 | Pistas y ruteo | `create_track` `delete_track` `duplicate_track` `set_track` `select_track` `get_track_info` `get_routing` `set_routing` |
 | Clips MIDI | `create_clip` `add_notes` `get_notes` `remove_notes` `quantize_clip` `set_clip` `duplicate_clip` `delete_clip` `fire_clip` `stop_track_clips` `select_clip` |
 | Automatización | `set_clip_automation` (envolventes de cualquier parámetro, en clips MIDI o de audio) |

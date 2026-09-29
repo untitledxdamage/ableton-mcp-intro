@@ -2,6 +2,12 @@
 
 All versions tested on Ableton Live 12.2.7 **Intro**, Windows 11. Evidence behind each release (Spanish): [docs/VALIDACION.md](docs/VALIDACION.md).
 
+## [1.3.0] - 2026-09-29
+
+### Added
+- `examples/`: results made through the bridge, all generated from real renders by `examples/build_examples.py`: audio excerpts (the v3 beat, a v2/v3 A/B, the 808 before/after tuning), charts in light and dark (sidechain duck, loudness per section, 808 pitch, render alignment), `analyze_audio` JSON, a condensed real session, and a screenshot of the Arrangement taken through the bridge.
+- `show_view` can hide panels (`hide=["Browser", "Detail"]`); new `navigate_view` zooms or scrolls a view (e.g. fit a whole song in the Arrangement).
+
 ## [1.2.0] - 2026-09-29
 
 ### Added

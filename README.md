@@ -23,12 +23,21 @@ It gives an agent hands and ears inside Live:
 
 ## What it does well (tested)
 
-- **Fine-grained control on Intro.** 56 tools that cover the everyday Live workflow without Max for Live.
+- **Fine-grained control on Intro.** 57 tools that cover the everyday Live workflow without Max for Live.
 - **Real units instead of raw values.** "150 Hz" or "-18 dB" land exactly: the bridge bisects Live's own display values.
 - **Honest rendering.** Live's API can't export, so the bridge records in real time and trims Live's hidden latency pre-roll, so files start on the downbeat (verified to the transient). All stems come out in one pass, and they sum back to the master (correlation 0.97).
 - **Measurement you can trust.** Loudness matches BS.1770 references within ±0.02 LU, streamed in about 90 MB of RAM.
 - **Safe around a human.** It never steals focus while you're using the computer, guards against Live's "S = solo" hotkey, restores solo/mute states, and returns clear errors.
 - **Hot reload.** Update the script without restarting Live.
+
+## Results
+
+A complete beat made through the bridge, with audio, charts and a real example session: **[examples/](examples/README.md)**.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="examples/img/sidechain_dark.png">
+  <img alt="Pad level dipping on every 808 hit: real sidechain set up by an agent" src="examples/img/sidechain_light.png" width="720">
+</picture>
 
 ## What it doesn't do
 
@@ -75,11 +84,11 @@ It gives an agent hands and ears inside Live:
 
 **Updating the script:** `install_remote_script.ps1 -Reload` applies changes without restarting Live. Toggling the Control Surface does **not** reload code.
 
-## Tools (56)
+## Tools (57)
 
 | Area | Tools |
 |---|---|
-| Session and transport | `get_session_info` `set_tempo` `set_time_signature` `transport` `set_song_options` `show_view` |
+| Session and transport | `get_session_info` `set_tempo` `set_time_signature` `transport` `set_song_options` `show_view` `navigate_view` |
 | Tracks and routing | `create_track` `delete_track` `duplicate_track` `set_track` `select_track` `get_track_info` `get_routing` `set_routing` |
 | MIDI clips | `create_clip` `add_notes` `get_notes` `remove_notes` `quantize_clip` `set_clip` `duplicate_clip` `delete_clip` `fire_clip` `stop_track_clips` `select_clip` |
 | Automation | `set_clip_automation` (envelopes for any device parameter, in MIDI or audio clips) |
