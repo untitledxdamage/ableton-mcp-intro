@@ -1,0 +1,29 @@
+[project]
+name = "ableton-mcp"
+version = "1.1.0"
+description = "MCP server for Ableton Live 12 Intro: Claude composes, mixes, renders and measures music"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Luis Izaga" }]
+keywords = ["ableton", "ableton-live", "live-intro", "mcp", "claude", "music-production", "remote-script"]
+classifiers = [
+    "Topic :: Multimedia :: Sound/Audio",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: Microsoft :: Windows",
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]>=2.2.0",
+    "numpy>=2.5.3",
+    "pyloudnorm>=0.2.0",
+    "scipy>=1.14",
+    "soundfile>=0.14.0",
+]
+
+[project.scripts]
+ableton-mcp = "ableton_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"

@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Renders and audio artefacts
+beats/_renders/
+*.wav
+*.asd
+
+# Local production notebooks (kept on this machine, not part of the public bridge)
+beats/
+docs/PLAYBOOK_PRODUCCION.md
+docs/ESCUCHA_Y_FOLEY.md
+docs/BITACORA.md
