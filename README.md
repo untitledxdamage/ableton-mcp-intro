@@ -99,6 +99,10 @@ A complete beat made through the bridge, with audio, charts and a real example s
 | Verification | `measure_levels` `render_to_wav` `render_status` `analyze_audio` |
 | Maintenance | `ping` `reload_script` |
 
+## Feedback welcome
+
+This is a personal, unofficial project, tested only on my own setup (Live 12.2.7 Intro, Windows). It surely has rough edges. If you try it, [open an issue](https://github.com/untitledxdamage/ableton-mcp-intro/issues): bugs, missing tools, things that feel wrong in a real workflow, or simply whether it works on Standard/Suite or macOS. I'll keep updating it from time to time, at least until Ableton releases an official option.
+
 ## Documentation (Spanish)
 
 - [VALIDACION.md](docs/VALIDACION.md): the evidence. What was tested, how, the results, the 16 bugs found and fixed, and what is **not** tested.
