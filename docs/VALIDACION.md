@@ -33,8 +33,9 @@ Cada fila se comprobó **midiendo el resultado**: releyendo el estado de Live, c
 | Análisis de loudness | Comparación con pyloudnorm / BS.1770 | Idéntico (±0.02 LU), 92 MB de RAM para cualquier duración |
 | Afinación | FFT del bajo renderizado | Detectó un preset +23.7 cents desafinado; corregido a +0.9 |
 | Textura de foley | Archivos con veredicto humano previo | Reprodujo 21.0 dB de una cama aprobada y el zumbido (234 Hz) de un audio generado que había sido rechazado |
+| Automatización (envolventes de clip) | Envolvente de 16 pasos en `test_bridge.py`; en el beat, un filtro que se abre de 700 Hz a 12 kHz en 8 compases (intro), un pad que se cierra y se abre, y una caída de volumen en cada golpe del 808 | El efecto se midió en el audio: el intro quedó -15.3 LUFS frente a -13.0 sin la apertura; la caída midió -8 dB |
 | Recarga en caliente | Cambios de código sin reiniciar Live | Más de 10 recargas en uso real |
-| Clips de audio desde archivo | Uso en el proyecto de foley | OK (Live 12 API) |
+| Clips de audio desde archivo | Grabaciones reales de foley cargadas, con cambio de tono tipo cinta (`warping=False` + `pitch_coarse`), procesadas y exportadas como stems | OK (Live 12: `ClipSlot.create_audio_clip`) |
 
 ## Errores encontrados y corregidos
 

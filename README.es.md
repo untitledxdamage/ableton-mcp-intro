@@ -14,9 +14,11 @@ Le da a un agente manos y oídos dentro de Live:
 
 - **Armar sesiones:** crear pistas MIDI, de audio y de retorno; cargar instrumentos, efectos, kits y presets del navegador.
 - **Escribir música:** clips MIDI con notas, probabilidad y variación de velocity; cuantizar; leer lo que tú tocaste.
+- **Trabajar con audio, no solo MIDI:** cargar samples y grabaciones (WAV/AIFF/FLAC/MP3) en clips de audio; ajustar el modo de warp, el tono tipo cinta (warp apagado + transposición) y la ganancia; colocar los clips en el Arrangement.
+- **Automatizar:** dibujar envolventes de clip para cualquier parámetro de un dispositivo, por ejemplo un filtro que se abre de 700 Hz a 12 kHz en 8 compases, o una caída de volumen tipo sidechain.
 - **Arreglar:** escenas, y colocar clips en el Arrangement para armar un tema completo.
 - **Dar forma al sonido:** mover cualquier parámetro **en unidades reales** (Hz, dB, ms, %); entrar en racks y pads de batería; reordenar efectos.
-- **Mezclar:** volumen, paneo, envíos, ruteo, **sidechain real con Compressor**, clips de audio (warp, tono tipo cinta, ganancia).
+- **Mezclar:** volumen, paneo, envíos, ruteo, **sidechain real con Compressor**.
 - **Revisar su propio trabajo**, porque un agente no oye: medidores en vivo, **render a WAV o stems** y análisis de audio (LUFS, true peak, balance espectral, estéreo, textura).
 
 ## Qué hace bien (probado)
@@ -33,6 +35,7 @@ Le da a un agente manos y oídos dentro de Live:
 - **No exporta con el diálogo de Live.** El render graba en tiempo real, así que un tema de 2 minutos tarda 2 minutos.
 - **No puede guardar ni crear sets por sí solo.** Tras un render guarda con Ctrl+S en Windows; en otros sistemas guardas tú.
 - **No puede entrar en muchos presets de Intro.** Algunos racks esconden su interior; solo se ven sus macros.
+- **La automatización vive dentro de los clips.** Las envolventes de clip funcionan (y viajan con el clip al Arrangement), pero no las líneas de automatización de pista del Arrangement. El audio llega al Arrangement en dos pasos: un slot de Session y luego `arrangement_place`.
 - **No juzga el gusto.** Mide; tú escuchas y decides.
 
 ## Funciona con cualquier agente
@@ -78,7 +81,8 @@ Le da a un agente manos y oídos dentro de Live:
 |---|---|
 | Sesión y transporte | `get_session_info` `set_tempo` `set_time_signature` `transport` `set_song_options` `show_view` |
 | Pistas y ruteo | `create_track` `delete_track` `duplicate_track` `set_track` `select_track` `get_track_info` `get_routing` `set_routing` |
-| Clips MIDI | `create_clip` `add_notes` `get_notes` `remove_notes` `quantize_clip` `set_clip` `duplicate_clip` `delete_clip` `fire_clip` `stop_track_clips` `select_clip` `set_clip_automation` |
+| Clips MIDI | `create_clip` `add_notes` `get_notes` `remove_notes` `quantize_clip` `set_clip` `duplicate_clip` `delete_clip` `fire_clip` `stop_track_clips` `select_clip` |
+| Automatización | `set_clip_automation` (envolventes de cualquier parámetro, en clips MIDI o de audio) |
 | Clips de audio | `load_audio_clip` `set_audio_clip` |
 | Escenas | `create_scene` `rename_scene` `fire_scene` `duplicate_scene` `delete_scene` |
 | Dispositivos | `browse` `search_browser` `load_device` `delete_device` `move_device` `get_device_parameters` `set_device_parameters` `set_parameter_real` `set_sidechain` `device_property` `get_drum_pads` `get_rack` `set_chain` |
