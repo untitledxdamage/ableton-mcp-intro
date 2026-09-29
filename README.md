@@ -14,7 +14,7 @@ It gives an agent hands and ears inside Live:
 
 - **Build sessions:** create MIDI, audio and return tracks; load instruments, effects, kits and presets from the browser.
 - **Write music:** MIDI clips with notes, probability and velocity variation; quantize; read back what you played.
-- **Work with audio, not just MIDI:** load samples and recordings (WAV/AIFF/FLAC/MP3) into audio clips; set warp mode, tape-style pitch (warp off + transpose) and gain; place the clips in the Arrangement.
+- **Work with audio, not just MIDI:** load samples and recordings (WAV/AIFF/FLAC/MP3) into audio clips; set warp mode, tape-style pitch (warp off + transpose) and gain; place audio **directly on the Arrangement timeline** at any bar.
 - **Automate:** draw clip envelopes for any device parameter, e.g. a filter opening from 700 Hz to 12 kHz over 8 bars, or a sidechain-style volume duck.
 - **Arrange:** scenes, and placing clips in the Arrangement to lay out a full song.
 - **Shape sound:** set any device parameter, **in real units** (Hz, dB, ms, %); reach inside racks and Drum Rack pads; reorder effects.
@@ -23,7 +23,7 @@ It gives an agent hands and ears inside Live:
 
 ## What it does well (tested)
 
-- **Fine-grained control on Intro.** 55 tools that cover the everyday Live workflow without Max for Live.
+- **Fine-grained control on Intro.** 56 tools that cover the everyday Live workflow without Max for Live.
 - **Real units instead of raw values.** "150 Hz" or "-18 dB" land exactly: the bridge bisects Live's own display values.
 - **Honest rendering.** Live's API can't export, so the bridge records in real time and trims Live's hidden latency pre-roll, so files start on the downbeat (verified to the transient). All stems come out in one pass, and they sum back to the master (correlation 0.97).
 - **Measurement you can trust.** Loudness matches BS.1770 references within ±0.02 LU, streamed in about 90 MB of RAM.
@@ -35,7 +35,7 @@ It gives an agent hands and ears inside Live:
 - **It doesn't export through Live's dialog.** Renders are real-time recordings, so a 2-minute song takes 2 minutes.
 - **It can't save or create sets by itself.** Saving after a render is done with Ctrl+S on Windows; on other systems you save by hand.
 - **It can't reach inside many Intro presets.** Some racks hide their internals; only their macros are reachable.
-- **Automation lives inside clips.** Clip envelopes work (and travel with the clip into the Arrangement), but track-level automation lanes in the Arrangement are not supported. Audio reaches the Arrangement in two steps: a Session slot, then `arrangement_place`.
+- **Automation lives inside clips.** Clip envelopes work (and travel with the clip into the Arrangement), but track-level automation lanes in the Arrangement are not supported.
 - **It can't judge taste.** It measures; you listen and decide.
 
 ## Works with any agent
@@ -75,7 +75,7 @@ It gives an agent hands and ears inside Live:
 
 **Updating the script:** `install_remote_script.ps1 -Reload` applies changes without restarting Live. Toggling the Control Surface does **not** reload code.
 
-## Tools (55)
+## Tools (56)
 
 | Area | Tools |
 |---|---|
@@ -83,7 +83,7 @@ It gives an agent hands and ears inside Live:
 | Tracks and routing | `create_track` `delete_track` `duplicate_track` `set_track` `select_track` `get_track_info` `get_routing` `set_routing` |
 | MIDI clips | `create_clip` `add_notes` `get_notes` `remove_notes` `quantize_clip` `set_clip` `duplicate_clip` `delete_clip` `fire_clip` `stop_track_clips` `select_clip` |
 | Automation | `set_clip_automation` (envelopes for any device parameter, in MIDI or audio clips) |
-| Audio clips | `load_audio_clip` `set_audio_clip` |
+| Audio clips | `load_audio_clip` `arrangement_audio_clip` `set_audio_clip` |
 | Scenes | `create_scene` `rename_scene` `fire_scene` `duplicate_scene` `delete_scene` |
 | Devices | `browse` `search_browser` `load_device` `delete_device` `move_device` `get_device_parameters` `set_device_parameters` `set_parameter_real` `set_sidechain` `device_property` `get_drum_pads` `get_rack` `set_chain` |
 | Arrangement | `arrangement_place` `get_arrangement_clips` `clear_arrangement` |

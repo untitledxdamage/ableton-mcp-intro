@@ -2,6 +2,14 @@
 
 All versions tested on Ableton Live 12.2.7 **Intro**, Windows 11. Evidence behind each release (Spanish): [docs/VALIDACION.md](docs/VALIDACION.md).
 
+## [1.2.0] - 2026-09-29
+
+### Added
+- `arrangement_audio_clip`: put an audio file directly on the Arrangement timeline at any beat (Live 12 `Track.create_audio_clip`), no Session slot needed. Verified by playing across the clip start with the meter: silence before, signal from the placed beat.
+
+### Docs
+- Audio clips and clip automation are now stated explicitly as capabilities, with evidence (a third-party AI review had concluded they were missing).
+
 ## [1.1.0] - 2026-09-29
 
 ### Added

@@ -35,6 +35,7 @@ Cada fila se comprobó **midiendo el resultado**: releyendo el estado de Live, c
 | Textura de foley | Archivos con veredicto humano previo | Reprodujo 21.0 dB de una cama aprobada y el zumbido (234 Hz) de un audio generado que había sido rechazado |
 | Automatización (envolventes de clip) | Envolvente de 16 pasos en `test_bridge.py`; en el beat, un filtro que se abre de 700 Hz a 12 kHz en 8 compases (intro), un pad que se cierra y se abre, y una caída de volumen en cada golpe del 808 | El efecto se midió en el audio: el intro quedó -15.3 LUFS frente a -13.0 sin la apertura; la caída midió -8 dB |
 | Recarga en caliente | Cambios de código sin reiniciar Live | Más de 10 recargas en uso real |
+| Audio directo en el Arrangement | `arrangement_audio_clip` coloca un archivo de 60 s en el compás 5 de un set vacío; se reproduce leyendo posición y medidor a la vez | Clip de beat 16 a 136 (60 s a 120 BPM); silencio antes del beat 16 (6 lecturas en 0.0), señal desde el beat 16.3 |
 | Clips de audio desde archivo | Grabaciones reales de foley cargadas, con cambio de tono tipo cinta (`warping=False` + `pitch_coarse`), procesadas y exportadas como stems | OK (Live 12: `ClipSlot.create_audio_clip`) |
 
 ## Errores encontrados y corregidos

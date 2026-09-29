@@ -510,6 +510,23 @@ class AbletonMCP(ControlSurface):
         slot.create_audio_clip(file_path)
         return self._clip_info(slot.clip)
 
+    def cmd_arrangement_audio_clip(self, track_index, file_path, time):
+        """Put an audio file (absolute path) straight onto an audio track's Arrangement
+        timeline at `time` beats (Live 12: Track.create_audio_clip), no Session slot."""
+        track = self._track(track_index)
+        if not hasattr(track, "create_audio_clip"):
+            raise CommandError("This Live version has no Track.create_audio_clip")
+        if track.has_midi_input:
+            raise CommandError("Track %d is a MIDI track; use an audio track" % track_index)
+        before = len(track.arrangement_clips)
+        track.create_audio_clip(file_path, float(time))
+        clips = sorted(track.arrangement_clips, key=lambda c: abs(c.start_time - float(time)))
+        if len(track.arrangement_clips) <= before or not clips:
+            raise CommandError("Live did not create the clip")
+        c = clips[0]
+        return {"name": c.name, "start": c.start_time, "end": c.end_time,
+                "warping": c.warping, "file_path": c.file_path}
+
     def cmd_set_audio_clip(self, track_index, slot_index, warping=None, warp_mode=None,
                            pitch_coarse=None, pitch_fine=None, gain=None):
         """Audio clip playback: warp_mode 0 Beats, 1 Tones, 2 Texture, 3 Re-Pitch, 4 Complex,

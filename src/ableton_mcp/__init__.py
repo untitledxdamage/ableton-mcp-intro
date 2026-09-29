@@ -239,6 +239,14 @@ def load_audio_clip(track_index: int, slot_index: int, file_path: str) -> dict:
 
 
 @mcp.tool()
+def arrangement_audio_clip(track_index: int, file_path: str, time: float) -> dict:
+    """Place an audio file (absolute path, WAV/AIFF/FLAC/MP3) directly on an audio
+    track's Arrangement timeline at `time` beats (bar N starts at (N-1)*4 in 4/4),
+    without going through a Session slot. The clip is created unwarped (natural speed)."""
+    return live.send("arrangement_audio_clip", track_index=track_index, file_path=file_path, time=time)
+
+
+@mcp.tool()
 def set_audio_clip(track_index: int, slot_index: int, warping: bool | None = None,
                    warp_mode: Literal[0, 1, 2, 3, 4, 6] | None = None,
                    pitch_coarse: int | None = None, pitch_fine: float | None = None,

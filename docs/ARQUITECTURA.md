@@ -66,6 +66,7 @@ Generada desde el código (métodos `cmd_*` del Remote Script). Por el socket se
 | Comando | Parámetros | Herramienta MCP |
 |---|---|---|
 | `add_notes` | `track_index, slot_index, notes, replace=False` | igual |
+| `arrangement_audio_clip` | `track_index, file_path, time` | igual |
 | `arrangement_place` | `track_index, slot_index, time` | igual |
 | `browse` | `path='instruments'` | igual |
 | `clear_arrangement` | `track_index` | igual |
