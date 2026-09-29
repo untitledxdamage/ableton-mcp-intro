@@ -32,7 +32,7 @@ It gives an agent hands and ears inside Live:
 
 ## Results
 
-A complete beat made through the bridge, with audio, charts and a real example session: **[examples/](examples/README.md)**.
+A complete beat made through the bridge, with audio, charts and a real example session, plus a **video** of an agent building a lo-fi beat from an empty set: **[examples/](examples/README.md)**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="examples/img/sidechain_dark.png">

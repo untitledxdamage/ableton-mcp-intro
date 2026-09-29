@@ -32,7 +32,7 @@ Le da a un agente manos y oídos dentro de Live:
 
 ## Resultados
 
-Un beat completo hecho con el puente, con audio, gráficos y una sesión de ejemplo real: **[examples/](examples/README.md)** (en inglés).
+Un beat completo hecho con el puente, con audio, gráficos y una sesión de ejemplo real, además de un **video** de un agente armando un beat lo-fi desde un set vacío: **[examples/](examples/README.md)** (en inglés).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="examples/img/sidechain_dark.png">

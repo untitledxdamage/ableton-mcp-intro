@@ -2,6 +2,11 @@
 
 All versions tested on Ableton Live 12.2.7 **Intro**, Windows 11. Evidence behind each release (Spanish): [docs/VALIDACION.md](docs/VALIDACION.md).
 
+## [1.3.1] - 2026-09-29
+
+### Added
+- `examples/video/demo_lofi_beat_build.mp4`: time-lapse of Claude Code building a 16-bar lo-fi beat from an empty Live Intro set through the MCP tools (measure, fix, export), ending with the exported WAV playing in sync with Live.
+
 ## [1.3.0] - 2026-09-29
 
 ### Added
