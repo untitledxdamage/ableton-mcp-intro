@@ -13,6 +13,7 @@ Este MCP no es oficial ni tiene una suite de pruebas contra muchas configuracion
 |---|---|
 | **Beat Plugg / Cloud Trap completo**: 6 pistas, 64 compases, 3 versiones de mezcla | Crear pistas, cargar presets de Intro, escribir cientos de notas MIDI, escenas y Arrangement, automatización en clips, sidechain real, EQ, saturación, master, render a WAV y **stems** en una pasada |
 | **Procesamiento de grabaciones de foley y ambiente** para un canal de video (chimenea) | Cargar archivos de audio en clips, tono "tipo cinta", ruteo, stems; análisis de textura (contraste, crepitar, zumbido) |
+| **Beat lo-fi desde un set vacío, grabado en video** (`examples/video/`) | Solo herramientas MCP: pistas, kit, MIDI, arreglo, medición y corrección de la mezcla, limitador, render y verificación; detectó un kit con pads ocultos y un master saturando |
 | **Reconstrucción por scripts**: el mismo puente controlado sin MCP, por socket | El protocolo JSON funciona para cualquier programa, no solo para Claude |
 
 ## Capacidades verificadas
@@ -73,5 +74,5 @@ Detalle técnico de cada uno: [HALLAZGOS_API_LIVE12.md](HALLAZGOS_API_LIVE12.md)
 ## Lo que NO está probado
 - Live **Standard/Suite** (debería funcionar: solo usa la API común), **Live 11** y **macOS**. En macOS el guardado automático tras un render no existe; hay que guardar a mano.
 - Otros clientes MCP (Cursor, VS Code, etc.). El protocolo es estándar, pero no se probaron.
-- Reconstruir un tema completo desde un set vacío, de principio a fin: la API no puede crear sets nuevos.
+- Crear el set vacío en sí: la API no puede crear sets nuevos, así que la demo en video partió de una copia vaciada de un set existente.
 - Sets grandes (más de 16 pistas no es posible en Intro).
